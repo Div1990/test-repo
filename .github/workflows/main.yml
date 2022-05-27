@@ -45,8 +45,8 @@ jobs:
               {
                 "type": "section",
                 "text": {
-                  "type": "mrkdwn",
-                  "text": "${{ toJSON(github.event.release.body) }}"
+                  "type": "plain_text",
+                  "text": ${{ toJSON(github.event.release.body) }}
                 }
               },
               {
