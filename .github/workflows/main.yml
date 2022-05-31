@@ -14,7 +14,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: Slack Notification on SUCCESS
         if: success()
-        uses: tokorom/action-slack-incoming-webhook@main
+        uses: tokorom/action-slack-incoming-webhook@v1.1.4
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
@@ -45,7 +45,7 @@ jobs:
               {
                 "type": "section",
                 "text": {
-                  "type": "plain_text",
+                  "type": "mrkdwn",
                   "text": '```${{ toJSON(github.event.release.body) }}```'
                 }
               },
