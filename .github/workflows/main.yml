@@ -18,7 +18,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: A release is published.
+          text: Release ${{ github.event.release.tag_name}} is published.
           blocks: |
             [
               {
